@@ -17,4 +17,15 @@ function getComputerChoice() {
     }
 }
 
+// Create a new function named getHumanChoice.
+// Write the code so that getHumanChoice will return one of the valid choices depending on what the user inputs.
+// Test what your function returns by using console.log.
+
+function getHumanChoice(){
+    let choice = prompt("Pick Rock, Paper, or Scissors")
+    console.log(choice.toLowerCase());    
+}
+
 getComputerChoice()
+getHumanChoice()
+
