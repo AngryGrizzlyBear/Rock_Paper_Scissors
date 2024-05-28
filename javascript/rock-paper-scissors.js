@@ -2,7 +2,7 @@
 // Create two new variables named humanScore and computerScore in the global scope.
 // Initialize those variables with the value of 0.
 let humanScore = 0;
-let computerScore = 0;  
+let computerScore = 0;
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 
@@ -13,23 +13,23 @@ function getComputerChoice() {
     num = Math.floor(Math.random() * 3);
 
     if (num == 0) {
-        console.log("rock")
+        return("rock")
     } else if (num == 1) {
-        console.log("paper")
+        return ("paper")
     } else if (num == 2) {
-        console.log("scissors")
+        return("scissors")
     } else {
-        console.log("try again!")
+        return("try again!")
     }
 }
 
 // Create a new function named getHumanChoice.
 // Write the code so that getHumanChoice will return one of the valid choices depending on what the user inputs.
-// Test what your function returns by using console.log.
+// Test what your function returns by using return.
 
 function getHumanChoice() {
     let choice = prompt("Pick Rock, Paper, or Scissors")
-    console.log(choice.toLowerCase());
+    return(choice.toLowerCase());
 }
 
 // Create a new function named playRound.
@@ -43,7 +43,7 @@ function playRound(getHumanChoice, getComputerChoice) {
         console.log(" Scissors beats Paper! You win!")
         humanScore++;
     } else if (getHumanChoice === "rock" && getComputerChoice === "scissors") {
-        console.log ("Rock beats Scissors! You Win!")
+        console.log("Rock beats Scissors! You Win!")
         humanScore++;
     } else if (getHumanChoice === "paper" && getComputerChoice === "rock") {
         console.log("Paper beats Rock! You win!")
@@ -52,7 +52,7 @@ function playRound(getHumanChoice, getComputerChoice) {
         console.log("The Computer Wins! You Lose!")
         computerScore++;
     }
-  }
+}
 
-  
-  playRound(humanSelection, computerSelection);
+
+playRound(humanSelection, computerSelection);
