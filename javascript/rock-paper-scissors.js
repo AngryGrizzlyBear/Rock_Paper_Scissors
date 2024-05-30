@@ -54,20 +54,22 @@ function playGame() {
         if (getHumanChoice === "scissors" && getComputerChoice === "paper") {
             console.log(" Scissors beats Paper! You win!")
             humanScore++
-            round++;
+            
         } else if (getHumanChoice === "rock" && getComputerChoice === "scissors") {
             console.log("Rock beats Scissors! You Win!")
-            round++
+            
             humanScore++;
         } else if (getHumanChoice === "paper" && getComputerChoice === "rock") {
             console.log("Paper beats Rock! You win!")
-            round++
+            
             humanScore++;
         } else {
             console.log("The Computer Wins! You Lose!")
-            round++
+            
             computerScore++;
         }
+        round++;
+        console.log(round)
     }
     for (let i = 0; i < 5; i++) {
         const humanSelection = getHumanChoice();
