@@ -58,7 +58,7 @@ function playGame() {
 
 
 
-    
+
     rock.addEventListener("click", () => {
         getHumanChoice = "rock";
         let computerChoice = getComputerChoice();
@@ -76,7 +76,8 @@ function playGame() {
     })
 
 
-   async function playRound(getHumanChoice, getComputerChoice) {
+    async function playRound(getHumanChoice, getComputerChoice) {
+        round++
         if (getHumanChoice === "scissors" && getComputerChoice === "paper") {
             console.log(" Scissors beats Paper! You win!")
             const keepscore = document.querySelector("#keepscore")
@@ -98,14 +99,25 @@ function playGame() {
             console.log("The Computer Wins! You Lose!")
             computerScore++;
         }
-        round ++
+      
         console.log(round)
 
-        if(round === 5) {
+        if (round === 5) {
             if (humanScore > computerScore) {
+                const paragraph = document.createElement("p");
+                paragraph.classList.add("paragraph");
+                paragraph.textContent = "Congratulations! You Win!";
+                paragraph.style.color = "Blue";
                 console.log("Congrats! You win!")
+
+                keepscore.appendChild(paragraph)
             } else {
+                const paragraph = document.createElement("p");
+                paragraph.classList.add("paragraph");
+                paragraph.textContent = "You Lost!";
+                paragraph.style.color = "red";
                 console.log("You Lost!")
+                keepscore.appendChild(paragraph)
             }
         } else {
             console.log("Keep Playing!")
@@ -113,7 +125,7 @@ function playGame() {
     }
 
 
-    
+
     // for (let i = 0; i < 5; i++) {
     //     const humanSelection = getHumanChoice();
     //     const computerSelection = getComputerChoice();
