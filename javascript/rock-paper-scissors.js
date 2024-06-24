@@ -120,6 +120,12 @@ function playGame() {
                 keepscore.appendChild(paragraph)
             }
         } else {
+            const paragraph = document.createElement("p");
+            paragraph.classList.add("paragraph");
+            paragraph.textContent = "Keep Playing!";
+            paragraph.style.color = "green";
+            console.log("You Lost!")
+            keepscore.appendChild(paragraph)
             console.log("Keep Playing!")
         }
     }
